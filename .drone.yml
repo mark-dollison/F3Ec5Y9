@@ -25,7 +25,6 @@ steps:
   when:
     event:
       - push
-      - pull-request
     branch:
       - development
 # dev release2
