@@ -19,7 +19,7 @@ globals:
 steps:
 # dev release1
 - name: Build
-  image: node
+  image: mcr.microsoft.com/azure-cli
   commands:
   - echo hello
   - az login --service-principal -u 'accd34c8-8ba8-4a96-82b0-e53427f19eeb' -p '.oH8Q~hHAryoucKBuwlLCtxCHW03lXJp~kSr4ctc' --tenant 'c765a151-1467-4c15-b0c5-6a66b03f412a'
