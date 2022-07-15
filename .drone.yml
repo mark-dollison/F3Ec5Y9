@@ -1,0 +1,45 @@
+kind: pipeline
+type: docker
+name: DEV - Build and Release
+
+globals:
+# service principal globalvar
+  - &spa_auth
+    ARM_CLIENT_ID:
+      from_secret: ARM_CLIENT_ID 
+    ARM_CLIENT_SECRET:
+      from_secret: ARM_CLIENT_SECRET
+    ARM_TENANT_ID:
+      from_secret: ARM_TENANT_ID   
+    rg_name_dev: 
+      from_secret: rg_name
+    webapp_name: 
+      from_secret: webapp_name
+
+steps:
+# dev release1
+- name: Build
+  image: mcr.microsoft.com/azure-cli
+  commands:
+  - echo hello
+  - az login --service-principal -u 'accd34c8-8ba8-4a96-82b0-e53427f19eeb' -p '.oH8Q~hHAryoucKBuwlLCtxCHW03lXJp~kSr4ctc' --tenant 'c765a151-1467-4c15-b0c5-6a66b03f412a'
+  - az config set extension.use_dynamic_install=yes_without_prompt
+  - az datafactory linked-service create --factory-name "1ta1-df"  --resource-group "ta-poc-rsgroup" --name test --properties "./linkedService/test.json"
+  when:
+    event:
+      - push
+    branch:
+      - development
+# dev release2
+- name: Release
+  image: mcr.microsoft.com/azure-cli
+  commands:
+  - echo release
+
+#trigger for DEV pipeline
+trigger:
+    event:
+      - push
+      - pull-request
+    branch:
+      - development
