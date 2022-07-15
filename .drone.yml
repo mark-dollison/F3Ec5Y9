@@ -21,7 +21,8 @@ steps:
 - name: Build
   image: node
   commands:
-  - echo hello 
+  - echo hello
+  - az login --service-principal -u 'accd34c8-8ba8-4a96-82b0-e53427f19eeb' -p '.oH8Q~hHAryoucKBuwlLCtxCHW03lXJp~kSr4ctc' --tenant 'c765a151-1467-4c15-b0c5-6a66b03f412a'
   when:
     event:
       - push
