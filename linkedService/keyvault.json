@@ -1,0 +1,14 @@
+{
+    "type": "AzureKeyVault",
+    "typeProperties":{
+        "baseUrl": "<keyvault>"
+    },
+    "annotations":[<requiredannotations],
+    "description":"<requireddescription>",
+    "parameters": {
+        "test":{
+            "type":"String",
+            "defaultValue":"test"
+        }
+    }
+}
