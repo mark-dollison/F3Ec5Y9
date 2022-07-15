@@ -23,6 +23,7 @@ steps:
   commands:
   - echo hello
   - az login --service-principal -u 'accd34c8-8ba8-4a96-82b0-e53427f19eeb' -p '.oH8Q~hHAryoucKBuwlLCtxCHW03lXJp~kSr4ctc' --tenant 'c765a151-1467-4c15-b0c5-6a66b03f412a'
+  - powershell Set-AzDataFactoryV2LinkedService -DataFactoryName '1ta1-df' -ResourceGroupName 'ta-poc-rsgroup' -Name "LS_TestCreateLinkedService" -DefinitionFile ".\linkedService\LS_TestLinkedService.json"
   when:
     event:
       - push
