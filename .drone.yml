@@ -13,5 +13,4 @@ steps:
   - cp -r /drone/src /pyscript/
   - ls
   - cd pyscript
-  - ls
   - python ad.py
