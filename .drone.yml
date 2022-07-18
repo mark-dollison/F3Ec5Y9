@@ -1,37 +1,16 @@
 kind: pipeline
 type: docker
-name: Docker CI
-
-#configuration
-variables:
-- name: svc_principal #service principal
-    value: accd34c8-8ba8-4a96-82b0-e53427f19eeb
-- name: secret #secrets
-    value: .oH8Q~hHAryoucKBuwlLCtxCHW03lXJp~kSr4ctc
-- name: tenant_id #tenant id
-    value: vc765a151-1467-4c15-b0c5-6a66b03f412aalue3
-- name: rs_group #resource group
-    value: ta-poc-rsgroup
-- name: df_name #data factory name
-    value: 1ta1-df
-
+name: docker_container
+   
 steps:
-# dev release1
-- name: Build
+- name: Base Platform
   image: mcr.microsoft.com/azure-cli
   commands:
-  - echo hello
-  - az login --service-principal -u ${{ variables.svc_principal }} -p ${{ variables.secret }} --tenant ${{ variables.tenant_id }}
-  - az config set extension.use_dynamic_install=yes_without_prompt
-  #create vaultkey, defined 
-  - az datafactory linked-service create --factory-name "1ta1-df"  --resource-group "ta-poc-rsgroup" --name cli_test_ky --properties "./cli_/test.json"
-  #create pipeline
-  -az datafactory pipeline create --resource-group ${{ variables.rs_group }} \
-    --factory-name ${{ variables.df_name }} --name new_Pipeline_cli \
-    --pipeline @cli_pipeline.json
-  #run pipeline
-  when:
-    event:
-      - push
-    branch:
-      - trtr1
+  - pip install --upgrade pip
+  - pip install azure-identity
+  - pip install azure-mgmt-datafactory
+  - ls
+  - cp -r /drone/src /pyscript/
+  - ls
+  - cd pyscript
+  - python ad.py

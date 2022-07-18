@@ -3,7 +3,7 @@
 	"properties": {
 		"description": "Linked Service for Azure Data Lake Gen 2. ",
 		"annotations": [],
-		"type": "AzureKeyVaultSecret",
+		"type": "AzureBlobFS",
 		"typeProperties": {
 			"url": "https://test.dfs.core.windows.net/",
 			"accountKey": {
