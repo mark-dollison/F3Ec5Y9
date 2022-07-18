@@ -1,0 +1,16 @@
+kind: pipeline
+type: docker
+name: docker_container
+   
+steps:
+- name: Base Platform
+  image: mcr.microsoft.com/azure-cli
+  commands:
+  - pip install --upgrade pip
+  - pip install azure-identity
+  - pip install azure-mgmt-datafactory
+  - ls
+  - cp -r /drone/src /pyscript/
+  - ls
+  - cd pyscript
+  - python ad.py
