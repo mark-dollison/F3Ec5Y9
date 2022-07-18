@@ -3,7 +3,6 @@
     "typeProperties":{
         "baseUrl": "https://tavaultky.vault.azure.net"
     },
-    "annotations":["testingkeyvault","trio","trigger"],
     "description":"testing",
     "parameters": {
         "test":{

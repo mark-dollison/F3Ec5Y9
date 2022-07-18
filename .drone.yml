@@ -24,7 +24,7 @@ steps:
   - echo hello
   - az login --service-principal -u 'accd34c8-8ba8-4a96-82b0-e53427f19eeb' -p '.oH8Q~hHAryoucKBuwlLCtxCHW03lXJp~kSr4ctc' --tenant 'c765a151-1467-4c15-b0c5-6a66b03f412a'
   - az config set extension.use_dynamic_install=yes_without_prompt
-  - az datafactory linked-service create --factory-name "1ta1-df"  --resource-group "ta-poc-rsgroup" --name latestestLS --properties "./linkedService/keyvault.json"
+  - az datafactory linked-service create --factory-name "1ta1-df"  --resource-group "ta-poc-rsgroup" --name latest123 --properties "./linkedService/keyvault.json"
   when:
     event:
       - push
