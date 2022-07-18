@@ -1,10 +1,10 @@
 {
     "type": "AzureKeyVault",
     "typeProperties":{
-        "baseUrl": "<keyvault>"
+        "baseUrl": "https://tavaultky.vault.azure.net"
     },
-    "annotations":[<requiredannotations],
-    "description":"<requireddescription>",
+    "annotations":["testingkeyvault","trio","trigger"],
+    "description":"testing",
     "parameters": {
         "test":{
             "type":"String",
