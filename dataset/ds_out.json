@@ -1,0 +1,15 @@
+{
+	"name": "ds_out",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureBlob",
+		"typeProperties": {
+			"folderPath": "tastrgaccblob/output"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

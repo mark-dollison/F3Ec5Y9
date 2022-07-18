@@ -1,5 +1,5 @@
 {
-	"name": "test",
+	"name": "latest123",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"type": "AzureKeyVault",
@@ -10,13 +10,9 @@
 				"defaultValue": "test"
 			}
 		},
-		"annotations": [
-			"testingkeyvault",
-			"trio",
-			"trigger"
-		],
 		"typeProperties": {
 			"baseUrl": "https://tavaultky.vault.azure.net"
-		}
+		},
+		"annotations": []
 	}
 }

@@ -1,0 +1,16 @@
+{
+	"name": "ds_in",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureBlob",
+		"typeProperties": {
+			"fileName": "input.csv",
+			"folderPath": "tastrgaccblob"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
