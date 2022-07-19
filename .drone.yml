@@ -9,8 +9,6 @@ steps:
   - pip install --upgrade pip
   - pip install azure-identity
   - pip install azure-mgmt-datafactory
-  - ls
   - cp -r /drone/src /pyscript/
-  - ls
   - cd pyscript
-  - python ad.py
+  - python adtest.py

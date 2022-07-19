@@ -11,8 +11,8 @@ sys.path
 
 def print_item(group):
     """Print an Azure object instance."""
-    print("\tName: {}".format(group.name))
-    print("\tId: {}".format(group.id))
+    print("Name: {}".format(group.name))
+    print("Id: {}".format(group.id))
     if hasattr(group, 'location'):
         print("Location: {}".format(group.location))
     if hasattr(group, 'tags'):
@@ -23,20 +23,20 @@ def print_item(group):
 def print_properties(props):
     """Print a ResourceGroup properties instance."""
     if props and hasattr(props, 'provisioning_state') and props.provisioning_state:
-        print("Properties:")
-        print("Provisioning State: {}".format(props.provisioning_state))
+        print("\tProperties:")
+        print("\t\tProvisioning State: {}".format(props.provisioning_state))
     print("\n\n")
 
 def print_activity_run_details(activity_run):
     """Print activity run details."""
-    print("\n\tActivity run details\n")
-    print("\tActivity run status: {}".format(activity_run.status))
+    print("\nActivity run details\n")
+    print("Activity run status: {}".format(activity_run.status))
     if activity_run.status == 'Succeeded':
-        print("\tNumber of bytes read: {}".format(activity_run.output['dataRead']))
-        print("\tNumber of bytes written: {}".format(activity_run.output['dataWritten']))
-        print("\tCopy duration: {}".format(activity_run.output['copyDuration']))
+        print("Number of bytes read: {}".format(activity_run.output['dataRead']))
+        print("Number of bytes written: {}".format(activity_run.output['dataWritten']))
+        print("Copy duration: {}".format(activity_run.output['copyDuration']))
     else:
-        print("\tErrors: {}".format(activity_run.error['message']))
+        print("Errors: {}".format(activity_run.error['message']))
 
 
 def main():
