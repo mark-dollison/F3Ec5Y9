@@ -3,7 +3,7 @@
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"type": "AzureKeyVault",
-		"description": "testing",
+		"description": "testing 123",
 		"parameters": {
 			"test": {
 				"type": "String",
