@@ -16,7 +16,7 @@
 			"trigger"
 		],
 		"typeProperties": {
-			"baseUrl": "https://tavaultky.vault.azure.net"
+			"baseUrl": "https://testtavaultky.vault.azure.net"
 		}
 	}
 }
